@@ -1,11 +1,6 @@
 # AP template: Single Page Application
 
-Simple SPA that uses:
-
-- `.htaccess` file
-- jQuery ajax requests
-- js `history` api
-- handlebars.js templates
+Simple SPA based on an `.htaccess` file, jQuery ajax requests, the javascript `history` api and handlebars.js templates.
 
 How it works:
 
