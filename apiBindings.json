@@ -1,0 +1,37 @@
+{
+  "home": {
+    "request": {
+	    "method": "GET",
+	    "url": "api.php?uid=home",
+	    "data": null
+	  },
+    "response": {
+      "type": "item"
+    },
+    "template": "page"
+  },
+
+  "projects": {
+    "request": {
+	    "method": "GET",
+      "url": "api.php?uid=projects",
+	    "data": null
+	  },
+    "response": {
+      "type": "list"
+    },
+    "template": "projects"
+  },
+
+  "about": {
+    "request": {
+	    "method": "GET",
+      "url": "api.php?uid=about",
+	    "data": null
+	  },
+    "response": {
+      "type": "item"
+    },
+    "template": "page"
+  }
+}

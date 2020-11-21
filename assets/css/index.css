@@ -1,0 +1,371 @@
+*:not(i), *:not(i)::before, *:not(i)::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape while allowing user zoom */ }
+
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section, summary {
+  display: block; }
+
+::-moz-selection {
+  background: #dc3545;
+  color: black; }
+
+::selection {
+  background: #dc3545;
+  color: black; }
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none; }
+
+button,
+input,
+optgroup,
+select,
+textarea, html input[type="button"],
+input[type="reset"],
+input[type="submit"], button[disabled],
+html input[disabled], button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  border: none;
+  background-image: none;
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+html body input:-internal-autofill-selected {
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: none !important;
+  color: -internal-light-dark-color(black, white) !important; }
+
+.font-l {
+  font-family: "Helvetica", sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  line-height: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+  @media (min-width: 576px) {
+    .font-l {
+      font-size: 36px; } }
+  @media (min-width: 768px) {
+    .font-l {
+      font-size: 36px; } }
+  @media (min-width: 992px) {
+    .font-l {
+      font-size: 36px; } }
+  @media (min-width: 1200px) {
+    .font-l {
+      font-size: 36px; } }
+
+.font-m {
+  font-family: "Helvetica", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  line-height: 1.4em;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+  @media (min-width: 576px) {
+    .font-m {
+      font-size: 20px; } }
+  @media (min-width: 768px) {
+    .font-m {
+      font-size: 20px; } }
+  @media (min-width: 992px) {
+    .font-m {
+      font-size: 20px; } }
+  @media (min-width: 1200px) {
+    .font-m {
+      font-size: 20px; } }
+
+.font-s {
+  font-family: "Helvetica", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+  @media (min-width: 576px) {
+    .font-s {
+      font-size: 15px; } }
+  @media (min-width: 768px) {
+    .font-s {
+      font-size: 15px; } }
+  @media (min-width: 992px) {
+    .font-s {
+      font-size: 15px; } }
+  @media (min-width: 1200px) {
+    .font-s {
+      font-size: 15px; } }
+
+/* USAGE 
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  @include animation('slide-down 5s 3');
+}
+*/
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 0px 0px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 1; }
+
+.hamburger-box {
+  width: 20px;
+  height: 16px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -1px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -7px; }
+  .hamburger-inner::after {
+    bottom: -7px; }
+
+/*
+ * Slider
+ */
+.hamburger--slider .hamburger-inner {
+  top: 1px; }
+  .hamburger--slider .hamburger-inner::before {
+    top: 7px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s; }
+  .hamburger--slider .hamburger-inner::after {
+    top: 14px; }
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 7px, 0) rotate(45deg); }
+  .hamburger--slider.is-active .hamburger-inner::before {
+    transform: rotate(-45deg) translate3d(-2.8571428571px, -5px, 0);
+    opacity: 0; }
+  .hamburger--slider.is-active .hamburger-inner::after {
+    transform: translate3d(0, -14px, 0) rotate(-90deg); }
+
+.hamburger.white-text .hamburger-inner, .hamburger.white-text .hamburger-inner::before, .hamburger.white-text .hamburger-inner::after {
+  background-color: white; }
+
+* {
+  color: purple;
+  font-family: "Helvetica", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.2em;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+  @media (min-width: 576px) {
+    * {
+      font-size: 15px; } }
+  @media (min-width: 768px) {
+    * {
+      font-size: 15px; } }
+  @media (min-width: 992px) {
+    * {
+      font-size: 15px; } }
+  @media (min-width: 1200px) {
+    * {
+      font-size: 15px; } }
+
+body {
+  background-color: #999; }
+  body.loading main {
+    opacity: 0.2; }
+  body.menu-open main {
+    opacity: 0.8; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+.color-white {
+  color: white; }
+
+.color-bg {
+  color: #999; }
+
+.color-white50 {
+  color: rgba(255, 255, 255, 0.5); }
+
+.color-white40 {
+  color: rgba(255, 255, 255, 0.4); }
+
+.color-white30 {
+  color: rgba(255, 255, 255, 0.3); }
+
+.opacity-0 {
+  opacity: 0; }
+
+.bg-bg {
+  background-color: #999; }
+
+.bg-white {
+  background-color: white; }
+
+.bg-black {
+  background-color: black; }
+
+.upper {
+  text-transform: uppercase; }
+
+.mt-space {
+  margin-top: 20px; }
+
+.mb-space {
+  margin-bottom: 20px; }
+
+.my-space {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.mt-space-2 {
+  margin-top: 40px; }
+
+.mb-space-2 {
+  margin-bottom: 40px; }
+
+.my-space-2 {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.h-50vh {
+  height: 50vh !important; }
+
+.h-60vh {
+  height: 60vh !important; }
+
+.h-70vh {
+  height: 70vh !important; }
+
+.h-80vh {
+  height: 80vh !important; }
+
+.h-90vh {
+  height: 90vh !important; }
+
+.h-100vh {
+  height: 100vh !important; }
+
+nav.header {
+  height: 60px;
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px; }
+  nav.header .right {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+
+#menu-xs {
+  width: 100vw;
+  z-index: 11;
+  position: fixed;
+  background-color: rgba(153, 153, 153, 0.5);
+  padding: 20px;
+  padding-top: 60px;
+  top: 60px;
+  right: -110vw;
+  height: 100vh;
+  -webkit-transition: right 400ms;
+  -moz-transition: right 400ms;
+  -ms-transition: right 400ms;
+  -o-transition: right 400ms;
+  transition: right 400ms;
+  overflow-y: scroll; }
+  #menu-xs.open {
+    right: 0; }
+  #menu-xs a {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 55px;
+    text-decoration: none;
+    font-family: "Helvetica", sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    line-height: 1.2em;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal; }
+    @media (min-width: 576px) {
+      #menu-xs a {
+        font-size: 36px; } }
+    @media (min-width: 768px) {
+      #menu-xs a {
+        font-size: 36px; } }
+    @media (min-width: 992px) {
+      #menu-xs a {
+        font-size: 36px; } }
+    @media (min-width: 1200px) {
+      #menu-xs a {
+        font-size: 36px; } }
+
+main {
+  padding-top: 60px; }
+  main #content {
+    padding: 60px 20px; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import 'bootstrap-scss/_functions';
+@import 'bootstrap-scss/_variables';
+@import 'bootstrap-scss/mixins/_breakpoints';
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$bg: #999;
+$header-h: 60px;
+$space: 20px;
+
+// ------------------------------------------------------------------------
+// External files import
+// ------------------------------------------------------------------------
+
+@import '_reset';
+@import '_typography';
+@import '_mixins';
+@import '_hamburgers';
+
+
+// ------------------------------------------------------------------------
+// General tags & classes
+// ------------------------------------------------------------------------
+
+* {
+  color: purple;
+  @include font-s;
+}
+body {
+  background-color: $bg;
+
+  &.loading { 
+    main { opacity: 0.2; }
+  }
+  
+  &.menu-open {
+    main { opacity: 0.8; }
+  }
+}
+
+a {
+	cursor: pointer;
+  text-decoration: none;
+}
+
+// ------------------------------------------------------------------------
+// Utilities
+// ------------------------------------------------------------------------
+
+.color-white  { color: white; }
+.color-bg     { color: $bg; }
+.color-white50{ color: rgba(white, 0.5); }
+.color-white40{ color: rgba(white, 0.4); }
+.color-white30{ color: rgba(white, 0.3); }
+.opacity-0    { opacity: 0; }
+.bg-bg        { background-color: $bg; }
+.bg-white     { background-color: white; }
+.bg-black     { background-color: black; }
+.upper        { text-transform: uppercase; }
+
+.mt-space     { margin-top: $space; }
+.mb-space     { margin-bottom: $space; }
+.my-space     { margin-top: $space; margin-bottom: $space; }
+.mt-space-2   { margin-top: $space*2; }
+.mb-space-2   { margin-bottom: $space*2; }
+.my-space-2   { margin-top: $space*2; margin-bottom: $space*2; }
+
+.h-50vh       { height: 50vh !important; }
+.h-60vh       { height: 60vh !important; }
+.h-70vh       { height: 70vh !important; }
+.h-80vh       { height: 80vh !important; }
+.h-90vh       { height: 90vh !important; }
+.h-100vh      { height: 100vh !important; }
+
+// ------------------------------------------------------------------------
+// Header
+// ------------------------------------------------------------------------
+
+nav.header {
+  height: $header-h;
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top: 0; left: 0; right: 0;
+  padding: 0 $space;
+
+  .left {
+  }
+  .right {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+    button.hamburger { 
+    }
+  }
+}
+
+// ------------------------------------------------------------------------
+// Menu
+// ------------------------------------------------------------------------
+
+#menu-xs {
+  width: 100vw;
+  z-index: 11;
+  position: fixed;
+  background-color: rgba($bg, 0.5);
+  padding: $space;
+  padding-top: $space*3;
+  top: $header-h; right: -110vw;
+  height: 100vh;
+  @include transition(right 400ms);
+
+  &.open {
+    right: 0;
+  }
+  overflow-y: scroll;
+  a {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 55px;
+    text-decoration: none;
+    @include font-l;
+  }
+}
+
+// ------------------------------------------------------------------------
+// CONTENT
+// ------------------------------------------------------------------------
+
+main {
+  padding-top: $header-h;
+
+  #content {
+    padding: $header-h $space;
+  }
+}
+
+// ------------------------------------------------------------------------
+// BOOTSTRAP BREAKPOINTS
+// ------------------------------------------------------------------------
+
+// xs ---                 Portrait phones
+// sm ---  576px and up   Small devices (landscape phones)
+// md ---  768px and up   Medium devices (tablets)
+// lg ---  992px and up   Large devices (desktops)
+// xl --- 1200px and up   Extra large devices (large desktops)
+
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-only(md) { ... }
+// @include media-breakpoint-between(md, xl) { ... }
+// @include media-breakpoint-down(lg) { ... }

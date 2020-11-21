@@ -1,0 +1,16 @@
+{
+	"menuItems": [
+	  {
+	    "id":  "home",
+	    "pageTitle": "Home"
+	  },
+	  {
+	    "id":  "projects",
+	    "pageTitle": "Projects"
+	  },
+	  {
+	    "id":  "about",
+	    "pageTitle": "About"
+	  }
+	]
+}
